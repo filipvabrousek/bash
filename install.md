@@ -4,6 +4,14 @@ Installation:
 curl -so opn.sh http://swimrunworld.co/opn.sh && source ~/opn.sh 
 ```
 
+Usage: 
+
+```sh
+first "Filip"
+second -a
+second -b
+```
+
 
 Source:
 
