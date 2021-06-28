@@ -1,3 +1,5 @@
+# Bash script
+
 Installation:
 
 ```sh 
