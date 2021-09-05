@@ -23,7 +23,7 @@ _start:	            ;tells linker entry point
 
 ### Sections
 * ```section .data``` - initiated data or constants  
-* ```section.bss``` - declaring variables  
+* ```section.bss``` - declaring variables  
 * ```section.text``` - keeping the code  
 
 ```asm
