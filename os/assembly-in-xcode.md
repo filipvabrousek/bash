@@ -62,6 +62,35 @@ asm {
 
 
 
+## Simple jump
+
+```asm
+int main() {
+    int result = 1; // or four
+    int other = 0;
+    
+    asm {
+        cmp result, 3;
+        
+        // if (result(1) < 3) { less } else {  mov other, 2;  }
+        jl less;
+        mov other, 2;
+        
+        
+        jmp both;
+        
+        less: mov other, 1; // This is invoked
+        
+        both:
+    }
+    
+    printf("Value is %d\n", other);
+    
+    return 0;
+}
+```
+
+
 ## jg and jump conditions
 
 ```asm
