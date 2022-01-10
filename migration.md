@@ -122,15 +122,13 @@ Zkoušel jsem oba způsoby volání funkce a controlleru, ale žádný z nich ne
 ```html
 @using UTB.Eshop.Web.Areas.Customer.Controllers
 //...
-
   <a asp-controller="ComplaintController" asp-action="ComplainIt" asp-route-ID="@Model.Products[i].ID">
-                                            <h2>Click me</h2>
-                                        </a>                                     
+    <h2>Click me</h2>
+  </a>                                     
 ```
 
 ```html
 @using UTB.Eshop.Web.Areas.Customer.Controllers
-
 //...
  <a class="btn btn-outline-dark mt-auto"
     onclick="Buy(@Model.Products[i].ID, '@Url.Action("ComplainIt", "ComplaintController", new { Area = "Customer" })',
