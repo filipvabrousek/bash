@@ -131,7 +131,7 @@ namespace UTB.Eshop.Web.Areas.Customer.Controllers
 
 ## index.cshtml
 
-Zkoušel jsem oba způsoby volání funkce a controlleru
+Zkoušel jsem oba způsoby volání funkce a controlleru, ale žádný z nich nefunguje.
 ```html
 @using UTB.Eshop.Web.Areas.Customer.Controllers
 //...
