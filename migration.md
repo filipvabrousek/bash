@@ -1,18 +1,5 @@
 # Postup 
 
-Příkaz z Package Console:
-
-```bash
-Add-Migration "Complaints"
-```
-
-Výstup:
-```bash
-Build started...
-Build succeeded.
-The name 'Complaints' is used by an existing migration.
-```
-
 
 
 
@@ -148,6 +135,30 @@ Zkoušel jsem oba způsoby volání funkce a controlleru, ale žádný z nich ne
  <a class="btn btn-outline-dark mt-auto"
     onclick="Buy(@Model.Products[i].ID, '@Url.Action("ComplainIt", "ComplaintController", new { Area = "Customer" })',
     '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name')">Complaint</a>
+```
+
+
+Příkazy do Package Console:
+
+```bash
+Add-Migration "Complaints"
+```
+
+Výstup:
+```bash
+Build started...
+Build succeeded.
+The name 'Complaints' is used by an existing migration.
+```
+
+Příkaz:
+```bash
+Update-Database
+```
+
+Výstup
+```
+Table 'carouselitem' already exists
 ```
                                         
                                         
