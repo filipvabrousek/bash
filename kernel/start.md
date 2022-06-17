@@ -17,10 +17,17 @@ We need the build script from Google Drive.
 unsigned short *terminal_buffer;
 unsigned int vga_index;
 
-void kernel_main() {
-  writeText("Hello Filip");
-}
+char *my_itoa(int num, char * str);
+int digitCount(int num);
+void reverse(char s[]);
 
+void kernel_main() {
+    writeText("Hello Filip");
+    writeNumber(123);
+}
+// 13:17:31 17/06/2021
+
+//--------------------------------------WRITE TEXT
 void writeText(const char * s){
 
 char *base = (void *) 0xb8000;
@@ -31,6 +38,53 @@ while (*s) {
     }
 }
 
+void writeNumber(int num){
+    char str[digitCount(num)+1];
+    my_itoa(num, str);
+    reverse(str); // 21:03:19 WOW 17/06/2022
+    writeText(str);
+}
+
+char *my_itoa(int num, char * str){
+    int i = 0;
+    int base = 10;
+
+    while (num != 0){
+        int rem = num % base;
+        str[i++] = (rem > 9)? (rem - 10) + 'a' : rem + '0';
+        num = num/base;
+    }
+}
+
+int digitCount(int num){
+int count = 0;
+while(num > 0){
+    count++;
+    num = num / 10;
+}
+
+return count;
+}
+// implement strlen
+
+
+void reverse(char s[]){
+    char r[1000];
+    int begin, end, count = 0;
+
+    while(s[count] != '\0'){ count++; }
+    end = count - 1;
+
+    for (begin = 0; begin < count; begin++){
+        r[begin] = s[end];
+        end--;
+    }
+
+    r[begin] = '\0';
+    return r;
+}
+
+// 20:53:50
 void colorPrint(char * str, unsigned char color){
 int index = 0;
 while (str[index]){
@@ -40,13 +94,18 @@ while (str[index]){
 }
 }
 
-/* into main
+// fuck protos
+//void colorPrint(char * str, unsigned char color);
+//void writeText(const char * s);
+
+// 17:10:57
+
+
+/*
 terminal_buffer = (unsigned short *)VGA_ADDRESS;
  vga_index = 0;
  colorPrint("Hey green", GREEN); // you can run only one at a time, or they will owerwrite each other
 */
-
-// 17:10:57
 ```
 
 
