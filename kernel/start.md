@@ -1,4 +1,4 @@
-Kernel
+# Kernel
 
 1) install Docker + brew install qemu
 2) cd to folder with GitHub project
@@ -219,5 +219,4 @@ SECTIONS
 	}
 }
 ```
-
 
